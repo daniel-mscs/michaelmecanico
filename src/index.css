@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #05070a;
+  --color-coal: #0c1016;
+  --color-steel: #151b24;
+  --color-line: #232b37;
+  --color-volt: #00d4ff;
+  --color-volt-deep: #0091ff;
+  --color-fire: #ff2a3d;
+  --font-sans: "Archivo", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-ink);
+  color: #e8edf3;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Títulos: Archivo na largura máxima, peso pesado */
+.font-wide {
+  font-stretch: 125%;
+  font-variation-settings: "wdth" 125;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.text-glow { text-shadow: 0 0 24px rgb(0 212 255 / 0.45); }
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgb(0 212 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 212 255 / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.stripe {
+  background: repeating-linear-gradient(-45deg, var(--color-fire) 0 10px, transparent 10px 20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
